@@ -1,6 +1,6 @@
 <?php
 
-$path = "files/"; // Upload directory
+$path = "../files/"; // Upload directory
 $count = 0;
 
 if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
@@ -12,10 +12,8 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
         } else {
             if (move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path . $name))
                 echo 'file succesfully uploaded';
-            header("refresh:0; url=home.php");
+            header("refresh:0; url=../views/home.php");
             $count++; // Number of successfully uploaded file
         }
-    }
-    ;
+    };
 }
-

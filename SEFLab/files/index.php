@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['count']) && $_SESSION['count'] !== '') {
-    header("location: ../views/home.php");
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -15,11 +9,11 @@ if (isset($_SESSION['count']) && $_SESSION['count'] !== '') {
         <title>Start Bootstrap - SB Admin Version 2.0 Demo</title>
 
         <!-- Core CSS - Include with every page -->
-        <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../layout/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
         <!-- SB Admin CSS - Include with every page -->
-        <link href="../layout/css/sb-admin.css" rel="stylesheet">
+        <link href="css/sb-admin.css" rel="stylesheet">
 
     </head>
 
@@ -28,13 +22,12 @@ if (isset($_SESSION['count']) && $_SESSION['count'] !== '') {
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <center><img src="../layout/img/logo1.png"></center>
                     <div class="login-panel panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Please Sign In</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action='../functions/login.php' method='POST'>
+                            <form role="form" action='login.php' method='POST'>
                                 <fieldset>
                                     <div class="form-group">
                                         <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
@@ -58,13 +51,14 @@ if (isset($_SESSION['count']) && $_SESSION['count'] !== '') {
         </div>
 
         <!-- Core Scripts - Include with every page -->
-        <script src="../layout/js/jquery-1.10.2.js"></script>
-        <script src="../layout/js/bootstrap.min.js"></script>
-        <script src="../layout/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
         <!-- SB Admin Scripts - Include with every page -->
-        <script src="../layout/js/sb-admin.js"></script>
+        <script src="js/sb-admin.js"></script>
 
     </body>
 
 </html>
+

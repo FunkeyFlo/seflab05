@@ -6,13 +6,13 @@
         <title>Home</title>
 
         <!-- Core CSS - Include with every page -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../layout/font-awesome/css/font-awesome.css" rel="stylesheet">
 
         <!-- Page-Level Plugin CSS - Blank -->
 
         <!-- SB Admin CSS - Include with every page -->
-        <link href="css/sb-admin.css" rel="stylesheet">
+        <link href="../layout/css/sb-admin.css" rel="stylesheet">
 
     </head>
     <body>
@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="index.html"><img src="img/logo1.png"></a>
+                    <a class="navbar-brand" href="../views/home.html">Seflab</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -43,7 +43,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <li><a href="../functions/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->

@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
-    header("location: index.php");
+    header("location: ../index.php");
 }
-include 'header.php';
-include 'sidebar.php';
+include '../layout/header.php';
+include '../layout/sidebar.php';
 ?>
 <div class="row">
     <div class="col-lg-12">
@@ -14,5 +14,5 @@ include 'sidebar.php';
 </div>
 <!-- /.row -->
 <?php
-include 'footer.php';
+include '../layout/footer.php';
 ?>

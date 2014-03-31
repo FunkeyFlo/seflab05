@@ -1,18 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of queryManager
- *
- * @author Jay
- */
-
-include ('database.php');
+include ('../config/database.php');
 $connection = new Database();
 $connection->openConnection(); // connected to the database 
 $tbl_name = "users";
@@ -30,10 +18,9 @@ if ($count == 1) {
     session_start();
     $_SESSION['count'] = '1';
 //    $_SESSION['password']= $password;
-    header("location:home.php");
-} else {
-    session_start();
+    header("location:../views/home.php");
+} else {    
     $_SESSION['count'] = '0';
-    header("refresh:15; url = index.php");
+    header("refresh:15; url = ../index.php");
     echo "Wrong Username or Password";
 }

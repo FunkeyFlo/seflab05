@@ -2,10 +2,10 @@
     <div class="sidebar-collapse">
         <ul class="nav" id="side-menu">
             <li>
-                <a href="home.php"> Home</a>
+                <a href="../views/home.php"> Home</a>
             </li>
             <li>
-                <a href="upload.php">Upload</a>
+                <a href="../views/upload.php">Upload</a>
             </li>
             <li>
                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>

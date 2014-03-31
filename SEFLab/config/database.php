@@ -14,7 +14,7 @@
 class Database {
 
     var $host = "localhost"; // Host name 
-    var $username = "root"; // Mysql username 
+    var $username = "dev"; // Mysql username 
     var $password = "1234"; // Mysql password 
     var $db_name = "seflab"; // Database name 
     var $tbl_name; // Table name 
@@ -28,5 +28,4 @@ class Database {
     function closeConnection() {
         mysql_close();
     }
-
 }
