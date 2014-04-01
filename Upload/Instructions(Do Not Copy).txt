@@ -1,7 +1,0 @@
-Dit bestand niet kopieren.
-
-Stap 1: Ga in je xampp directory en vervang het bestand php.ini door het php.ini bestand in deze map.
-Stap 2: Vervang in de Seflab directory de bestanden upload.php en upload_file.php met de meegegeven upload bestanden in deze map.
-Stap 3: Kopier de map progressbar naar de Seflab directory.
-
-Herstart hierna je xampp server.(Anders werken de wijzigingen die zijn aangemaakt op het php.ini bestand niet.)
