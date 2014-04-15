@@ -32,7 +32,7 @@
                                 <fieldset>
 									<div class="form-group">
 											<label>Enter E-mail address</label>
-											<input class="form-control" name="email">
+											<input class="form-control" name="email" type="email">
 									</div>
 									<div class="form-group">
 											<label>Enter Password</label>

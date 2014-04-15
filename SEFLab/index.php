@@ -49,6 +49,7 @@ if (isset($_SESSION['count']) && $_SESSION['count'] !== '') {
                                     </div>
                                     <!-- Change this to a button or input when using this as a form -->
                                     <input type="submit" value="login" class="btn btn-lg btn-success btn-block"></a>
+									<label><a href="../views/register.php"><i class="fa fa-sign-out fa-fw"></i> Or klik here to sign up.</a></label>
                                 </fieldset>
                             </form>
                         </div>
