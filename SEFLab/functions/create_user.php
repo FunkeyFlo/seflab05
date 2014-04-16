@@ -8,6 +8,7 @@ $firstname 	= mysql_real_escape_string($_POST['firstname']);
 $surname = mysql_real_escape_string($_POST['lastname']);
 $email = mysql_real_escape_string($_POST['email']);
 $password = mysql_real_escape_string($_POST['password']);
+$hash = mysql_real_escape_string(crypt($password));
 
 $check="SELECT * FROM $tbl_name WHERE email='$email'";
 $result=mysql_query($check);
@@ -21,7 +22,7 @@ echo "E-mail already used";
 $sql = sprintf("INSERT INTO  $tbl_name ( `email` ,  `password` , `firstname` , `lastname` ) 
 values ('%s','%s','%s','%s')",
   mysql_real_escape_string($_POST['email']),
-  mysql_real_escape_string($_POST['password']),
+  mysql_real_escape_string($hash),
   mysql_real_escape_string($_POST['firstname']),
   mysql_real_escape_string($_POST['lastname'])
 );
