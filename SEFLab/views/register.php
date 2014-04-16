@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <center><img src="../layout/img/logo1.png"></center>
+                    <center><a href="../index.php"><img src="../layout/img/logo1.png"></a></center>
                     <div class="login-panel panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Please Sign up</h3>

@@ -8,7 +8,7 @@
                 <a href="../views/upload.php">Upload</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                <a href="C:/Users/Jay/Downloads/sb-admin-v2/sb-admin-v2/flot.html">Charts</a>
             </li>
 
             <!-- /#side-menu -->
