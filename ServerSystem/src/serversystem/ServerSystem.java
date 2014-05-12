@@ -5,7 +5,9 @@
  */
 package serversystem;
 
+import database.Query;
 import java.io.File;
+import model.Upload;
 
 /**
  *
@@ -19,20 +21,14 @@ public class ServerSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ftpThread = new Thread(new FtpServerActivity(), "ftpThread");
-        ftpThread.start();
+//        ftpThread = new Thread(new FtpServerActivity(), "ftpThread");
+//        ftpThread.start();
+        Query query = new Query();
+        Upload upload;
 
         String uploadDir = "C:/uploads";
-        Upload upl = new Upload();
-        File uploadFolder = new File(uploadDir);
-        File[] fileList;
-        while (true) {
-            fileList = uploadFolder.listFiles();
-            if (fileList.length > 0) {
-                System.out.println(fileList[0].getPath());
-                upl.upload(fileList[0].getPath(), fileList[0].getName());
-                return;
-            }
-        }
+//        Transfer upl = new Transfer();
+        upload = query.getNextFileToProcess();
+        System.out.println(upload.getFilePath());
     }
 }

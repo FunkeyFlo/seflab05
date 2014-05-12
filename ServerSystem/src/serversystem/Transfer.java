@@ -15,7 +15,7 @@ import org.apache.commons.net.ftp.FTPClient;
  *
  * @author Florentijn
  */
-public class Upload {
+public class Transfer {
 
     public void upload(String path, String fileName) {
         // get an ftpClient object
