@@ -7,6 +7,7 @@ package serversystem;
 
 import database.Query;
 import java.io.File;
+import java.util.Scanner;
 import model.Upload;
 
 /**
@@ -25,10 +26,18 @@ public class ServerSystem {
 //        ftpThread.start();
         Query query = new Query();
         Upload upload;
+        Scanner scan = new Scanner(System.in);
 
-        String uploadDir = "C:/uploads";
-//        Transfer upl = new Transfer();
+        String uploadDir = "C:/uploads/";
+        Transfer upl = new Transfer();
+//        upl.upload(uploadDir, "commons-io-2.4-bin.zip");
+        System.out.println("Enter the name of the file");
+        File file = new File(uploadDir + scan.next());
+//        System.out.println(file);
+//        file.delete();
+        upl.upload(file);
+        
         upload = query.getNextFileToProcess();
-        System.out.println(upload.getFilePath());
+        System.out.println(upload.getFile());
     }
 }

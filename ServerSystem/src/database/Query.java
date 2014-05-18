@@ -5,6 +5,7 @@
  */
 package database;
 
+import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,6 +28,7 @@ public class Query {
 
     public Upload getNextFileToProcess() {
         Upload upload = new Upload();
+        File file = null;
         try {
             db.openConnection();
             preparedStatement = db.connection.prepareStatement("SELECT * "
@@ -37,7 +39,7 @@ public class Query {
             ResultSet rs = preparedStatement.executeQuery();
             rs.next();
             upload = new Upload(rs.getInt("id"),
-                    rs.getString("filepath"),
+                    file = new File(rs.getString("filepath")),
                     rs.getString("uploaded_at"),
                     rs.getString("name"),
                     rs.getInt("owner_id"));

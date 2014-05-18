@@ -21,17 +21,17 @@ public class MeasureSystem {
     public static void main(String[] args) {
         ftpThread = new Thread(new FtpServerActivity(), "ftpThread");
         ftpThread.start();
-        String uploadDir = "C:/ftp";
-        Upload upl = new Upload();
-        File uploadFolder = new File(uploadDir);
-        File[] fileList;
-        while (true) {
-            fileList = uploadFolder.listFiles();
-            if (fileList.length > 0) {
-                System.out.println(fileList[0].getPath());
-                upl.upload(fileList[0].getPath(), fileList[0].getName());
-                return;
-            }
-        }
+//        String uploadDir = "C:/ftp";
+//        Upload upl = new Upload();
+//        File uploadFolder = new File(uploadDir);
+//        File[] fileList;
+//        while (true) {
+//            fileList = uploadFolder.listFiles();
+//            if (fileList.length > 0) {
+//                System.out.println(fileList[0].getPath());
+//                upl.upload(fileList[0].getPath(), fileList[0].getName());
+//                return;
+//            }
+//        }
     }
 }

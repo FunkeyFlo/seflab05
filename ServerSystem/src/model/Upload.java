@@ -6,6 +6,8 @@
 
 package model;
 
+import java.io.File;
+
 /**
  *
  * @author Florentijn
@@ -13,7 +15,7 @@ package model;
 public class Upload {
 
     public int id;
-    public String filePath;
+    public File file;
     public String uploadedAt;
     public String name;
     public int ownerId;
@@ -22,9 +24,9 @@ public class Upload {
         
     }
     
-    public Upload(int id, String filePath, String uploadedAt, String name, int ownerId) {
+    public Upload(int id, File file, String uploadedAt, String name, int ownerId) {
         this.id = id;
-        this.filePath = filePath;
+        this.file = file;
         this.uploadedAt = uploadedAt;
         this.name = name;
         this.ownerId = ownerId;
@@ -38,12 +40,12 @@ public class Upload {
         this.id = id;
     }
 
-    public String getFilePath() {
-        return filePath;
+    public File getFile() {
+        return file;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFile(File file) {
+        this.file = file;
     }
 
     public String getUploadedAt() {
@@ -72,6 +74,6 @@ public class Upload {
 
     @Override
     public String toString() {
-        return "Upload{" + "id=" + id + ", filePath=" + filePath + ", uploadedAt=" + uploadedAt + ", name=" + name + ", ownerId=" + ownerId + '}';
+        return "Upload{" + "id=" + id + ", filePath=" + file + ", uploadedAt=" + uploadedAt + ", name=" + name + ", ownerId=" + ownerId + '}';
     }
 }

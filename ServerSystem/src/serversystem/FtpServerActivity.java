@@ -8,12 +8,8 @@ import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
 import org.apache.ftpserver.ftplet.*;
 import org.apache.ftpserver.listener.ListenerFactory;
-import org.apache.ftpserver.main.AddUser;
-import org.apache.ftpserver.ssl.SslConfigurationFactory;
 import org.apache.ftpserver.usermanager.*;
-import org.apache.ftpserver.usermanager.impl.BaseUser;
 import org.apache.log4j.PropertyConfigurator;
-import org.slf4j.impl.Log4jLoggerFactory;
 
 /*
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
@@ -30,20 +26,7 @@ public class FtpServerActivity implements Runnable {
 
         // set the port of the listener
         factory.setPort(5678);
-
-		// define SSL configuration
-		/* TODO : Is not working yet. Need to work on this. 
-         System.out.println("Creating SSL");
-         SslConfigurationFactory ssl = new SslConfigurationFactory();
-         ssl.setKeystoreFile(new File("ftpserver.jks"));
-         ssl.setKeystorePassword("password");
-
-         // set the SSL configuration for the listener
-         factory.setSslConfiguration(ssl.createSslConfiguration());
-         factory.setImplicitSsl(true);
-         System.out.println("SSL Complete");
-         */
-        // replace the default listener
+        
         serverFactory.addListener("default", factory.createListener());
 
         System.out.println("Adding Users Now");
