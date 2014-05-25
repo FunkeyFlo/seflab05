@@ -17,11 +17,18 @@ include '../layout/sidebar.php';
                 </div>
                 <form action="../functions/upload_file.php" method="post" enctype="multipart/form-data">
 				<link href="../layout/js/progressbar/progressbarstyle.css" rel="stylesheet">
-                    <input type="file" id="file" name="files[]" multiple="multiple" 
+                    <label for="file1">Virtual Machine:</label>
+					<input type="file" id="vm" name="files[]" multiple="multiple"/>
+					</br>
+					<label for="file2">Load Script:</label>
+					<input type="file" id="script" name="files[]" multiple="multiple" 
 					style="width: 650px;
 						height: 22px;">
 						</br>
-                    <input type="submit" value="Upload" />	
+					Please name your VM: <input type="text" name="text" id="text"/>
+							</br>	
+                    <input type="submit" value="Submit" />	
+					</br>
 					
  <div class="progress">  
      <div class="bar"></div >  
