@@ -14,7 +14,7 @@
 
         <!-- SB Admin CSS - Include with every page -->
         <link href="../layout/css/sb-admin.css" rel="stylesheet">
-		
+
     </head>
 
     <body>
@@ -30,48 +30,48 @@
                         <div class="panel-body">
                             <form name="register_form" action='../functions/create_user.php' method='POST'>
                                 <fieldset>
-									<div class="form-group">
-											<label>Enter E-mail address</label>
-											<input class="form-control" name="email" type="email">
-									</div>
-									<div class="form-group">
-											<label>Enter Password</label>
-											<input class="form-control" name="password" type="password">
-									</div>
-									<div class="form-group">
-											<label>Enter Firstname</label>
-											<input class="form-control" name="firstname">
-									</div>
-									<div class="form-group">
-											<label>Enter Surname</label>
-											<input class="form-control" name="lastname">
-									</div>	
-									<div class="form-group">
-											 <label class="checkbox-inline">
-                                             <input type="checkbox" name="agreed" onchange="enable()">I have read and agree to the Terms & Conditions.
+                                    <div class="form-group">
+                                        <label>Enter E-mail address</label>
+                                        <input class="form-control" name="email" type="email">
                                     </div>
-                                    <!-- Change this to a button or input when using this as a form -->
-                                    <input type="submit" value="Sign up" disabled name="submit_button" class="btn btn-lg btn-success btn-block"></a>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                    <div class="form-group">
+                                        <label>Enter Password</label>
+                                        <input class="form-control" name="password" type="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Enter Firstname</label>
+                                        <input class="form-control" name="firstname">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Enter Surname</label>
+                                        <input class="form-control" name="lastname">
+                                    </div>	
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="agreed" onchange="enable()">I have read and agree to the Terms & Conditions.
+                                            </div>
+                                            <!-- Change this to a button or input when using this as a form -->
+                                            <input type="submit" value="Sign up" disabled name="submit_button" class="btn btn-lg btn-success btn-block"></a>
+                                            </fieldset>
+                                            </form>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
 
-        <!-- Core Scripts - Include with every page -->
-        <script src="../layout/js/jquery-1.10.2.js"></script>
-        <script src="../layout/js/bootstrap.min.js"></script>
-        <script src="../layout/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+                                            <!-- Core Scripts - Include with every page -->
+                                            <script src="../layout/js/jquery-1.10.2.js"></script>
+                                            <script src="../layout/js/bootstrap.min.js"></script>
+                                            <script src="../layout/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
-        <!-- SB Admin Scripts - Include with every page -->
-        <script src="../layout/js/sb-admin.js"></script>
-		
-		<script src="../layout/js/enable.js" type="text/javascript"></script>
-		
-		
+                                            <!-- SB Admin Scripts - Include with every page -->
+                                            <script src="../layout/js/sb-admin.js"></script>
 
-    </body>
+                                            <script src="../layout/js/enable.js" type="text/javascript"></script>
 
-</html>
+
+
+                                            </body>
+
+                                            </html>

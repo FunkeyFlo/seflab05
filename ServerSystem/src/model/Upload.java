@@ -6,8 +6,6 @@
 
 package model;
 
-import java.io.File;
-
 /**
  *
  * @author Florentijn
@@ -15,18 +13,19 @@ import java.io.File;
 public class Upload {
 
     public int id;
-    public File file;
+    public String vmPath;
+    public String scriptPath;
     public String uploadedAt;
     public String name;
     public int ownerId;
 
     public Upload(){
-        
     }
-    
-    public Upload(int id, File file, String uploadedAt, String name, int ownerId) {
+
+    public Upload(int id, String vmPath, String scriptPath, String uploadedAt, String name, int ownerId) {
         this.id = id;
-        this.file = file;
+        this.vmPath = vmPath;
+        this.scriptPath = scriptPath;
         this.uploadedAt = uploadedAt;
         this.name = name;
         this.ownerId = ownerId;
@@ -40,12 +39,20 @@ public class Upload {
         this.id = id;
     }
 
-    public File getFile() {
-        return file;
+    public String getVmPath() {
+        return vmPath;
     }
 
-    public void setFile(File file) {
-        this.file = file;
+    public void setVmPath(String vmPath) {
+        this.vmPath = vmPath;
+    }
+
+    public String getScriptPath() {
+        return scriptPath;
+    }
+
+    public void setScriptPath(String scriptPath) {
+        this.scriptPath = scriptPath;
     }
 
     public String getUploadedAt() {
@@ -74,6 +81,6 @@ public class Upload {
 
     @Override
     public String toString() {
-        return "Upload{" + "id=" + id + ", filePath=" + file + ", uploadedAt=" + uploadedAt + ", name=" + name + ", ownerId=" + ownerId + '}';
+        return "Upload{" + "id=" + id + ", vmPath=" + vmPath + ", scriptPath=" + scriptPath + ", uploadedAt=" + uploadedAt + ", name=" + name + ", ownerId=" + ownerId + '}';
     }
 }

@@ -39,7 +39,8 @@ public class Query {
             ResultSet rs = preparedStatement.executeQuery();
             rs.next();
             upload = new Upload(rs.getInt("id"),
-                    file = new File(rs.getString("filepath")),
+                    rs.getString("filepath_vm"),
+                    rs.getString("filepath_script"),
                     rs.getString("uploaded_at"),
                     rs.getString("name"),
                     rs.getInt("owner_id"));

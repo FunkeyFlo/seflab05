@@ -14,6 +14,7 @@ import java.io.File;
 public class MeasureSystem {
 
     private static Thread ftpThread;
+    private static Thread tcpThread;
 
     /**
      * @param args the command line arguments
@@ -21,15 +22,17 @@ public class MeasureSystem {
     public static void main(String[] args) {
         ftpThread = new Thread(new FtpServerActivity(), "ftpThread");
         ftpThread.start();
+        tcpThread = new Thread(new TCPServer(), "tcpThread");
+        tcpThread.start();
 //        String uploadDir = "C:/ftp";
-//        Upload upl = new Upload();
+//        Transfer tra = new Transfer();
 //        File uploadFolder = new File(uploadDir);
 //        File[] fileList;
 //        while (true) {
 //            fileList = uploadFolder.listFiles();
 //            if (fileList.length > 0) {
 //                System.out.println(fileList[0].getPath());
-//                upl.upload(fileList[0].getPath(), fileList[0].getName());
+//                tra.upload(fileList[0].getPath(), fileList[0].getName());
 //                return;
 //            }
 //        }

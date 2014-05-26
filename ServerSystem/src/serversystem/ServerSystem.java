@@ -5,11 +5,6 @@
  */
 package serversystem;
 
-import database.Query;
-import java.io.File;
-import java.util.Scanner;
-import model.Upload;
-
 /**
  *
  * @author Florentijn
@@ -17,6 +12,7 @@ import model.Upload;
 public class ServerSystem {
 
     private static Thread ftpThread;
+    private static Thread entryScanner;
 
     /**
      * @param args the command line arguments
@@ -24,20 +20,7 @@ public class ServerSystem {
     public static void main(String[] args) {
 //        ftpThread = new Thread(new FtpServerActivity(), "ftpThread");
 //        ftpThread.start();
-        Query query = new Query();
-        Upload upload;
-        Scanner scan = new Scanner(System.in);
-
-        String uploadDir = "C:/uploads/";
-        Transfer upl = new Transfer();
-//        upl.upload(uploadDir, "commons-io-2.4-bin.zip");
-        System.out.println("Enter the name of the file");
-        File file = new File(uploadDir + scan.next());
-//        System.out.println(file);
-//        file.delete();
-        upl.upload(file);
-        
-        upload = query.getNextFileToProcess();
-        System.out.println(upload.getFile());
+        entryScanner = new Thread(new EntryScanner(), "entryScanner");
+        entryScanner.start();
     }
 }

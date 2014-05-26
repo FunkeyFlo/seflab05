@@ -19,8 +19,8 @@ if($count==1)
 {
 echo "E-mail already used";
 }else{
-$sql = sprintf("INSERT INTO  $tbl_name ( `email` ,  `password` , `firstname` , `lastname` ) 
-values ('%s','%s','%s','%s')",
+$sql = sprintf("INSERT INTO  $tbl_name ( `email` ,  `password` , `firstname` , `lastname`, `is_locked`, `user_group`) 
+values ('%s','%s','%s','%s','0','1')",
   mysql_real_escape_string($_POST['email']),
   mysql_real_escape_string($hash),
   mysql_real_escape_string($_POST['firstname']),

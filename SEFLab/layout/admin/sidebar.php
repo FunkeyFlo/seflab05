@@ -2,13 +2,13 @@
     <div class="sidebar-collapse">
         <ul class="nav" id="side-menu">
             <li>
-                <a href="../../views/home.php">Home</a>
+                <a href=#>Home</a>
             </li>
             <li>
-                <a href="../../views/admin/userManagement.php">User management</a>
+                <a href="../../views/admin/user_management.php">User management</a>
             </li>
             <li>
-                <a href="../../views/charts.php">Charts</a>
+                <a href="../../views/admin/queue.php">Queue</a>
             </li>
 
             <!-- /#side-menu -->

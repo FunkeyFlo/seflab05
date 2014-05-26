@@ -18,7 +18,7 @@ include ('../../config/database.php');
 $connection = new Database();
 $connection->openConnection(); // connected to the database 
 $tbl_name = "users";
-$sql = mysql_query("SELECT * FROM users")
+$sql = mysql_query("SELECT * FROM users ORDER BY id")
 or die(mysql_error());
 $result = $sql;
 $connection->closeConnection();
