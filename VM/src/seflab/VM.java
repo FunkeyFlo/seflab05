@@ -16,11 +16,13 @@ import java.util.logging.Logger;
 /**
  *
  * @author Jay
+ * 
  */
 public class VM {
 
     private String path;
     private String name;
+    private final String vmBoxManager = "\"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" ";
 
     public VM(String path, String name) {
         this.path = path;
@@ -43,11 +45,11 @@ public class VM {
         this.name = name;
     }
 
-    public void run(String opdracht) {
+    public void run(String Task) {
         Runtime runtime = Runtime.getRuntime();
         Process process;
         try {
-            process = runtime.exec(opdracht); // you might need the full path
+            process = runtime.exec(Task); // you might need the full path
             InputStream is = process.getInputStream();
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(isr);
@@ -55,7 +57,7 @@ public class VM {
 
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
-//            TimeUnit.SECONDS.sleep(1);
+           // TimeUnit.SECONDS.sleep(1);
             }
         } catch (IOException ex) {
             Logger.getLogger(VM.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,24 +65,27 @@ public class VM {
 
     }
 
-    public void vmImport(){
-        String s = "\"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" "
+    // Import's the vm specified by getPath()
+    public void vmImport() {
+        String s = vmBoxManager
                 + "import "
                 + "\"" + getPath() + "\"";
         System.out.println("Importing VM");
         run(s);
     }
 
-    public void vmStart(){
-        String s = "\"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" "
+    // Start's the vm specified by getName()
+    public void vmStart() {
+        String s = vmBoxManager
                 + "startvm "
                 + getName();
         System.out.println("Starting VM");
         run(s);
     }
 
-    public void vmStop(){
-        String s = "\"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" "
+    // Stop's the vm specified by getName()
+    public void vmStop() {
+        String s = vmBoxManager
                 + "controlvm "
                 + getName()
                 + " poweroff";
@@ -88,8 +93,9 @@ public class VM {
         run(s);
     }
 
-    public void vmDelete(){
-        String s = "\"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" "
+    // Delete's the vm specified by getName()
+    public void vmDelete() {
+        String s = vmBoxManager
                 + "unregistervm "
                 + getName()
                 + " --delete";
