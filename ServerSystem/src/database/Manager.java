@@ -26,7 +26,7 @@ public class Manager {
             String url = "jdbc:mysql://localhost/seflab"
                     + "?zeroDateTimeBehavior=convertToNull";
             String user = "root";
-            String pass = "1234";
+            String pass = "App3ls@p!";
 
             /**
              * Open connection

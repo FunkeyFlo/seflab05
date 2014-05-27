@@ -29,7 +29,7 @@ public class FtpServerActivity implements Runnable {
         ListenerFactory factory = new ListenerFactory();
 
         // set the port of the listener
-        factory.setPort(9002);
+        factory.setPort(1234);
 
 		// define SSL configuration
 		/* TODO : Is not working yet. Need to work on this. 

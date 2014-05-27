@@ -26,9 +26,8 @@ public class Query {
     public final int NO_ID_CREATED = 0;
     public PreparedStatement preparedStatement = null;
 
-    public Upload getNextFileToProcess() {
+    public Upload getNextVmToProcess() {
         Upload upload = new Upload();
-        File file = null;
         try {
             db.openConnection();
             preparedStatement = db.connection.prepareStatement("SELECT * "
@@ -50,5 +49,67 @@ public class Query {
             db.closeConnection();
         }
         return upload;
+    }
+
+    public Upload getVmBeingProcessed() {
+        Upload upload = new Upload();
+        try {
+            db.openConnection();
+            preparedStatement = db.connection.prepareStatement("SELECT * "
+                    + "FROM unprocessed_uploads "
+                    + "WHERE being_processed = 1 "
+                    + "LIMIT 1");
+            ResultSet rs = preparedStatement.executeQuery();
+            rs.next();
+            upload = new Upload(rs.getInt("id"),
+                    rs.getString("filepath_vm"),
+                    rs.getString("filepath_script"),
+                    rs.getString("uploaded_at"),
+                    rs.getString("name"),
+                    rs.getInt("owner_id"));
+        } catch (SQLException ex) {
+            Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            db.closeConnection();
+        }
+        return upload;
+    }
+
+    public void deleteProcessedVm(Upload upload) {
+        try {
+            db.openConnection();
+            preparedStatement = db.connection.prepareStatement("DELETE "
+                    + "FROM unprocessed_uploads "
+                    + "WHERE id = ? "
+                    + "LIMIT 1");
+            preparedStatement.setInt(1, upload.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            db.closeConnection();
+        }
+    }
+
+    public void setToProcessed(String filePath) {
+        Upload upload = getVmBeingProcessed();
+        try {
+            db.openConnection();
+            preparedStatement = db.connection.prepareStatement("INSERT INTO processed_uploads "
+                    + "(id, filepath_measurement, uploaded_at, `name`, owner_id) "
+                    + "VALUES (?,?,?,?,?)");
+            preparedStatement.setInt(1, upload.getId());
+            preparedStatement.setString(2, filePath);
+            preparedStatement.setString(3, upload.getUploadedAt());
+            preparedStatement.setString(4, upload.getName());
+            preparedStatement.setInt(5, upload.getOwnerId());
+            preparedStatement.executeUpdate();
+            
+            deleteProcessedVm(upload);
+        } catch (SQLException ex) {
+            Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            db.closeConnection();
+        }
     }
 }

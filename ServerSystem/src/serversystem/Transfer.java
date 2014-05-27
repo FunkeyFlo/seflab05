@@ -34,7 +34,7 @@ public class Transfer {
             boolean uploadOk = ftpClient.storeFile(file.getName(), inputStream);
             System.out.println("Uploading status is: " + uploadOk);
 //            ftpClient.completePendingCommand();
-            ftpClient.logout();
+//            ftpClient.logout();
         } catch (IOException ex) {
             Logger.getLogger(Transfer.class.getName()).log(Level.SEVERE, null, ex);
         }

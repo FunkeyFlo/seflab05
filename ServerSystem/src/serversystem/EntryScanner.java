@@ -27,7 +27,7 @@ public class EntryScanner implements Runnable {
         boolean running = true;
 
         while (running) {
-            upload = query.getNextFileToProcess();
+            upload = query.getNextVmToProcess();
             if (upload.getUploadedAt() == null) {
                 try {
                     System.out.println("thread sleeping for 60 seconds... Zzzzzzzzzz.....");
