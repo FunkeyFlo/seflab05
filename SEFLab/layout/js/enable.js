@@ -5,4 +5,3 @@
    document.register_form.submit_button.disabled=false  
   }  
  } 
-
