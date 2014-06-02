@@ -18,8 +18,8 @@ public class ServerSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ftpThread = new Thread(new FtpServerActivity(), "ftpThread");
-        ftpThread.start();
+//        ftpThread = new Thread(new FtpServerActivity(), "ftpThread");
+//        ftpThread.start();
         entryScanner = new Thread(new EntryScanner(), "entryScanner");
         entryScanner.start();
     }
