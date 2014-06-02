@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../views/home.html">Seflab</a>
+                    <a class="navbar-brand" href="../views/home.php">Seflab</a>
                 </div>
                 <!-- /.navbar-header -->
 
