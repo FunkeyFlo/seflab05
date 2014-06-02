@@ -19,7 +19,7 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
         if ($file['error'][$index] == 0) {
             if ($file['size'][$index] < $min_file_size) {
                 echo "$name is not a valid file!.<br />\n";
-                continue; // Skip unvalid file
+                continue; // Skip invalid file
             } elseif (!in_array(pathinfo($file['name'][$index], PATHINFO_EXTENSION), $valid_formats)) {
                 echo "$name is not a valid format <br />\n";
                 continue; // Skip invalid file formats
