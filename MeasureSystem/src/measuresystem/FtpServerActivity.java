@@ -46,7 +46,7 @@ public class FtpServerActivity implements Runnable {
         // replace the default listener
         serverFactory.addListener("default", factory.createListener());
 
-        System.out.println("Adding Users Now");
+//        System.out.println("Adding Users Now");
         PropertiesUserManagerFactory userManagerFactory = new PropertiesUserManagerFactory();
         userManagerFactory.setFile(new File("users.properties"));
 

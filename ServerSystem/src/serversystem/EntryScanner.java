@@ -30,14 +30,14 @@ public class EntryScanner implements Runnable {
             upload = query.getNextVmToProcess();
             if (upload.getUploadedAt() == null) {
                 try {
-                    System.out.println("thread sleeping for 60 seconds... Zzzzzzzzzz.....");
-                    Thread.sleep(60000);
+                    System.out.println("thread sleeping for 20 seconds... Zzzzzzzzzz.....");
+                    Thread.sleep(20000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(EntryScanner.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } else {
-                String uploadDir = "C:/Users/Florentijn/Documents/GitHub/seflab05/SEFLab/";
+                String uploadDir = "D:/seflab/seflab05/SEFLab/";
                 Transfer tra = new Transfer();
 
                 File file = new File(uploadDir + upload.getVmPath());
@@ -57,6 +57,8 @@ public class EntryScanner implements Runnable {
 
                     ArrayList<String> parameters = new ArrayList<>();
 
+                    System.out.println("Starting FTP Transmition");
+                    
                     parameters.add(file.getName());
                     parameters.add(file2.getName());
                     
