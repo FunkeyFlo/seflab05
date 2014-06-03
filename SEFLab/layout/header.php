@@ -18,6 +18,7 @@
     <body>
 	<?php
 	$email = $_SESSION['usrname'];
+	$user_Group = $_SESSION['user_group'];
 	?>
         <div id="wrapper">
 
@@ -40,8 +41,11 @@
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-user fa-fw"></i> <?php echo $email;?> <i class="fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li class="divider"></li>
+                        <ul class="dropdown-menu dropdown-user"><?php
+						if ($_SESSION['user_group'] == 0){
+						echo'<li><a href="../views/admin/user_management.php"><i></i>Admin</a>
+                            <li class="divider"></li>';
+							}?>
                             <li><a href="../functions/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>

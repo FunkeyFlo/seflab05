@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Home</title>
+        <title>seflab</title>
 
         <!-- Core CSS - Include with every page -->
         <link href="../../layout/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../views/home.html">Seflab</a>
+                    <a class="navbar-brand" href="../../views/home.php">Seflab</a>
                 </div>
                 <!-- /.navbar-header -->
 

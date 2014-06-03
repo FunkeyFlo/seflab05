@@ -1,5 +1,3 @@
-
-
 <?php
 // <tr role=\"row\"><th class=\"sorting_asc\" tabindex=\"0\"aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-sort=\"ascending\" aria-label=\"<!--name-->: activate to sort column ascending\" style=\"width: 35px;\"><!--name--></th>
 session_start();
@@ -19,11 +17,6 @@ $sql1 = mysql_query("SELECT `id`, `name`,`uploaded_at` FROM `unprocessed_uploads
  or die(mysql_error());
 $result = $sql1;
 
-
-
-
-
-
 ?>
 <form role="form" action='../functions/login.php' method='POST'>
 <div class="row">
@@ -39,8 +32,6 @@ $result = $sql1;
 								<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Name</th>
 										<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Uploaded at</th>
 										<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Processed at</th>
-										
-
                                     </thead>";
 
 while ($row = mysql_fetch_array($result)) {
@@ -48,16 +39,21 @@ $upload_id = $row['id'];
 $sql2 = mysql_query("SELECT `processed_at` FROM `processed_uploads`  WHERE `id` ='$upload_id'")
  or die(mysql_error());
 $processed = mysql_fetch_array($sql2);
-if ($processed['processed_at'] != ""){
+
+$disabled = $processed['processed_at'] != "" ? "" : " disabled";
+
+$processed['processed_at'] = $processed['processed_at'] != "" ? $processed['processed_at'] : "Not yet processed";
+
+/*if ($processed['processed_at'] != ""){
 	
 } else{
 $processed['processed_at'] = "Not yet processed";
-}
+}*/
 
 									
 									    echo "	<tr class=\"\" style=\"text-align:center;\">
 
-												<td class=\"\"><input type=\"submit\" value =\" " . $row['name'] . "\" disabled name=\"submit_button\"\"</td>
+												<td class=\"\"><input type=\"submit\" value =\" " . $row['name'] . "\"" . $disabled . "  name=\"submit_button\"\"</td>
 												<td class=\"\">" . $row['uploaded_at'] . "</td>
 												<td class=\"\">" . $processed['processed_at'] . "</td>"
 
