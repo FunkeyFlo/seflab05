@@ -32,18 +32,21 @@ aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-sort=\"asc
 <th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Uploaded at</th>
 <th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Being processed</th>
 <th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Name</th>
-<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">User</th></tr>
+<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">User</th>
+<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Priority</th></tr>
                                     </thead>";
 while ($row = mysql_fetch_array($result)) {
     echo "<form name=\"delete\" role=\"form\" action='../../functions/admin/delete_user.php' method='POST'>
-<tr class=\"\" style=\"text-align:center;\"><td class=\"\"><input type=\"checkbox\" value=\" " . $row['id'] . " \" name=\"need_delete[]\"></td>
+<tr class=\"\" style=\"text-align:center;\">
+<td class=\"\"><input type=\"checkbox\" value=\" " . $row['id'] . " \" name=\"need_delete[]\"></td>
 <td class=\"\">" . $row['id'] . "</td>
 <td class=\"\">" . $row['filepath_vm'] . "</td>
 <td class=\"\">" . $row['filepath_script'] . "</td>
 <td class=\"\">" . $row['uploaded_at'] . "</td>
 <td class=\"\">" . $row['being_processed'] . "</td>
 <td class=\"\">" . $row['name'] . "</td>
-<td class=\"\">" . $row['owner_id'] . "</tr>"
+<td class=\"\">" . $row['owner_id'] . "</td>
+<td class=\"\">" . $row['priority'] . "</td>"
     ;  //$row['index'] the index here is a field name
 }
 echo "</table>";
