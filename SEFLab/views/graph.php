@@ -1,7 +1,12 @@
 <?php
 
-include 'layout/header.php';
-include 'layout/sidebar.php';
+session_start();
+if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
+    header("location: ../index.php");
+}
+
+include '../layout/header.php';
+include '../layout/sidebar.php';
 
 ?>
 
@@ -22,7 +27,7 @@ include 'layout/sidebar.php';
     function drawChart() {
         // grab the CSV
 		var path = "<?php 
-				include 'config/database.php';
+				include '../config/database.php';
 				$connection = new Database();
 				$connection->openConnection(); // connected to the database
 					$id = $_POST["id"];

@@ -18,7 +18,7 @@ $sql1 = mysql_query("SELECT `id`, `name`,`uploaded_at` FROM `unprocessed_uploads
 $result = $sql1;
 
 ?>
-<form role="form" action='../functions/login.php' method='POST'>
+<form role="form" action='../views/graph.php' method='POST'>
 <div class="row">
     <div class="col-lg-12">
 	
@@ -51,11 +51,12 @@ $processed['processed_at'] = "Not yet processed";
 }*/
 
 									
-									    echo "	<tr class=\"\" style=\"text-align:center;\">
+									    echo '	<tr class="" style="text-align:center;">
 
-												<td class=\"\"><input type=\"submit\" value =\" " . $row['name'] . "\"" . $disabled . "  name=\"submit_button\"\"</td>
-												<td class=\"\">" . $row['uploaded_at'] . "</td>
-												<td class=\"\">" . $processed['processed_at'] . "</td>"
+												<td class=""><input type="submit" value = ' . $row['name'] . ' . $disabled .   name="submit_button"</td>
+												<input type ="hidden" name = "id" value = ' . $row['id'] . '>
+												<td class="">' . $row['uploaded_at'] . '</td>
+												<td class="">' . $processed['processed_at'] . '</td>'
 
 
 
