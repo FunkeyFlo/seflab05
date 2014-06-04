@@ -5,11 +5,7 @@ $connection->openConnection(); // connected to the database
 $tbl_name = "users";
 
 $email = mysql_real_escape_string($_POST['email']);
-<<<<<<< HEAD
 
-
-=======
->>>>>>> ac70dd5af26e616c3c4f762e32d8c8e67f7a3e45
 $password = mysql_real_escape_string($_POST['password']);
 $sql = mysql_query("SELECT `password`, `id`, `user_group` FROM `users` WHERE `email`='$email'")
 	or die(mysql_error());
