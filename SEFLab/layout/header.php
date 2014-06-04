@@ -3,22 +3,22 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Home</title>
+        <title>seflab</title>
 
         <!-- Core CSS - Include with every page -->
-        <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../layout/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../../layout/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../layout/font-awesome/css/font-awesome.css" rel="stylesheet">
 
         <!-- Page-Level Plugin CSS - Blank -->
 
         <!-- SB Admin CSS - Include with every page -->
-        <link href="../layout/css/sb-admin.css" rel="stylesheet">
+        <link href="../../layout/css/sb-admin.css" rel="stylesheet">
 
     </head>
-    <body>
 	<?php
 	$email = $_SESSION['usrname'];
 	?>
+    <body>
         <div id="wrapper">
 
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -29,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../views/home.php">Seflab</a>
+                    <a class="navbar-brand" href="../../views/home.php">Seflab admin</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -37,12 +37,14 @@
 
                     <!-- /.dropdown -->
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-user fa-fw"></i> <?php echo $email;?> <i class="fa fa-caret-down"></i>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i><?php echo $email;?>   <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
+                            <li><a href="../../views/home.php"><i class="fa fa-user fa-fw"></i>user site</a>
+                            </li>
                             <li class="divider"></li>
-                            <li><a href="../functions/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <li><a href="../../functions/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->

@@ -1,18 +1,15 @@
 <?php
-//session_start();
-//if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
-//    header("location: ../index.php");
-//}
+session_start();
+if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
+  header("location: ../index.php");
+}
 include '../../layout/admin/header.php';
 include '../../layout/admin/sidebar.php';
 ?>
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">User management</h1>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
+    
 <?php
 include ('../../config/database.php');
 $connection = new Database();
@@ -41,6 +38,10 @@ echo "</table>";
 echo "<input type=\"submit\" value=\"Delete\" onclick=\"alert('user(s) deleted');\">
 </form>";
 ?>
+</div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
 <?php
-include '../../layout/footer.php';
+include '../../layout/admin/footer.php';
 ?>
