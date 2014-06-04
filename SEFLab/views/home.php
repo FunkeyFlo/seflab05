@@ -51,13 +51,13 @@ $processed = mysql_fetch_array($sql2);
 if ($processed['processed_at'] != ""){
 	
 } else{
-$processed['processed_at'] = "Not yet processed";
+$processed['processed_at'] = "Not processed yet";
 }
 
 									
 									    echo "	<tr class=\"\" style=\"text-align:center;\">
 
-												<td class=\"\"><input type=\"submit\" value =\" " . $row['name'] . "\" disabled name=\"submit_button\"\"</td>
+												<td class=\"\">" . $row['name'] . "</td>
 												<td class=\"\">" . $row['uploaded_at'] . "</td>
 												<td class=\"\">" . $processed['processed_at'] . "</td>"
 
