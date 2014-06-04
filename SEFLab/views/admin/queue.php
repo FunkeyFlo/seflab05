@@ -1,8 +1,8 @@
 <?php
-//session_start();
-//if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
-//    header("location: ../index.php");
-//}
+session_start();
+if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
+    header("location: ../index.php");
+}
 include '../../layout/admin/header.php';
 include '../../layout/admin/sidebar.php';
 ?>
@@ -49,7 +49,6 @@ while ($row = mysql_fetch_array($result)) {
 echo "</table>";
 echo "<input type=\"submit\" value=\"Delete\" onclick=\"alert('user(s) deleted');\">
 </form>";
-?>
-<?php
-include '../../layout/footer.php';
+
+include '../../layout/admin/footer.php';
 ?>

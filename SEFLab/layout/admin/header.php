@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Home</title>
+        <title>seflab</title>
 
         <!-- Core CSS - Include with every page -->
         <link href="../../layout/css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +15,9 @@
         <link href="../../layout/css/sb-admin.css" rel="stylesheet">
 
     </head>
+	<?php
+	$email = $_SESSION['usrname'];
+	?>
     <body>
         <div id="wrapper">
 
@@ -26,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../views/home.html">Seflab</a>
+                    <a class="navbar-brand" href="../../views/home.php">Seflab admin</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -35,13 +38,12 @@
                     <!-- /.dropdown -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                            <i class="fa fa-user fa-fw"></i><?php echo $email;?>   <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <li><a href="../../views/home.php"><i class="fa fa-user fa-fw"></i>user site</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
+							<li><a href="../../views/admin/register.php"><i class="fa fa-user fa-fw"></i>create new admin</a>
                             <li class="divider"></li>
                             <li><a href="../../functions/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
