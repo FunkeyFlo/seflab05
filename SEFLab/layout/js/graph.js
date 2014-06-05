@@ -1,26 +1,5 @@
-<?php
-session_start();
-//$_SESSION["result_id"] = 1 ;
-if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
-    header("location: ../index.php");
-}
-include '../layout/header.php';
-include '../layout/sidebar.php';
-?>
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">Charts</h1>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
-
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Result Chart</title>
-
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script> 
 	<script src="http://jquery-csv.googlecode.com/files/jquery.csv-0.71.js"></script>
 		
 
@@ -35,13 +14,15 @@ include '../layout/sidebar.php';
 				include '../config/database.php';
 				$connection = new Database();
 				$connection->openConnection(); // connected to the database
-					$result_id = $_POST["id"];
+					$id = $_POST["id"];
+					$jay = "../";
 					//$result_id = 1;
-					$a = mysql_query("SELECT `filepath_measurement` FROM `processed_uploads` WHERE `id` = '$result_id'") or die(mysql_error());
+					$a = mysql_query("SELECT `filepath_measurement` FROM `processed_uploads` WHERE `id` = '$id'") or die(mysql_error());
 					if (is_resource($a) and mysql_num_rows($a) > 0) {
 					$row = mysql_fetch_array($a);
-					$filepath = $row["filepath_measurement"];}
-					echo ($row['filepath_measurement']); 
+					
+					}
+					echo ($jay.$row['filepath_measurement']); 
 					?>";
         $.get(path, function(csvString) {
             // transform the CSV string into a 2-dimensional array
@@ -80,8 +61,7 @@ include '../layout/sidebar.php';
 			chart_div.innerHTML = '<img src="' + chart.getImageURI() + '">';
 			console.log(chart_div.innerHTML);
 		  });
-		  document.getElementById('png').outerHTML = '<a href="' + chart.getImageURI() + '"><img src="external/png.jpg" alt="Download Raw Data"></a>';
-            
+		   
             
             $("select").change(function(){
                
@@ -105,9 +85,3 @@ include '../layout/sidebar.php';
         });
     }
 </script>
-	</head>
-	<body>
-		<div id="chart" style="width: 900px; height: 500px;"></div>
-		<div id='png'></div>
-		<a href="<?php echo ($row['filepath_measurement']); ?>"><img src="external/csv.jpg" alt="Download Raw Data"></a>		
-	</body>
