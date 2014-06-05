@@ -1,23 +1,12 @@
 <?php
-
 session_start();
 if (!(isset($_SESSION['count']) && $_SESSION['count'] !== '')) {
     header("location: ../index.php");
 }
-
 include '../layout/header.php';
 include '../layout/sidebar.php';
-
+echo $_POST["id"];
 ?>
-
-
-<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Result Chart</title>
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-	<script src="http://jquery-csv.googlecode.com/files/jquery.csv-0.71.js"></script>
-		
 
 <script>
     // load the visualization library from Google and set a listener
@@ -34,11 +23,8 @@ include '../layout/sidebar.php';
 					$jay = "../";
 					//$result_id = 1;
 					$a = mysql_query("SELECT `filepath_measurement` FROM `processed_uploads` WHERE `id` = '$id'") or die(mysql_error());
-					if (is_resource($a) and mysql_num_rows($a) > 0) {
 					$row = mysql_fetch_array($a);
-					
-					}
-					echo ($jay.$row['filepath_measurement']); 
+					echo $jay.$row['filepath_measurement']; 
 					?>";
         $.get(path, function(csvString) {
             // transform the CSV string into a 2-dimensional array
@@ -102,8 +88,6 @@ include '../layout/sidebar.php';
         });
     }
 </script>
-	</head>
-	<body>
 		<div id="chart" style="width: 900px; height: 500px; border:2px solid ;"></div>
 		<div id='png'></div>
 		</body>
