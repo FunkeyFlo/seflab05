@@ -13,7 +13,7 @@ $connection->openConnection(); // connected to the database
 $id= $_SESSION['id'];
 
 
-$sql1 = mysql_query("SELECT `id`, `name`,`uploaded_at` FROM `unprocessed_uploads`  WHERE `owner_id` ='$id' ORDER BY uploaded_at")
+$sql1 = mysql_query("SELECT `id`, `name`,`uploaded_at` FROM `unprocessed_uploads`  WHERE `owner_id` ='$id' ORDER BY `uploaded_at`")
  or die(mysql_error());
 $result = $sql1;
 
@@ -32,7 +32,7 @@ $result = $sql1;
 								<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Name</th>
 										<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Uploaded at</th>
 										<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Processed at</th>
-										<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">view chart</th>
+										<th class=\"sorting\" tabindex=\"0\" aria-controls=\"dataTables-example\" rowspan=\"1\" colspan=\"1\" aria-label=\"Lastname: activate to sort column ascending\" style=\"width: 158px;\">Chart</th>
                                     </thead>";
 
 while ($row = mysql_fetch_array($result)) {
@@ -41,27 +41,22 @@ $sql2 = mysql_query("SELECT `processed_at` FROM `processed_uploads`  WHERE `id` 
  or die(mysql_error());
 $processed = mysql_fetch_array($sql2);
 
-$disabled = $processed['processed_at'] != "" ?   "" :" disabled";
+$disabled = $processed['processed_at'] != "" ? "" : " disabled";
 
 $processed['processed_at'] = $processed['processed_at'] != "" ? $processed['processed_at'] : "Not yet processed";
 
-/*if ($processed['processed_at'] != ""){
-	
-} else{
-$processed['processed_at'] = "Not processed yet";
-}
-=======
-$processed['processed_at'] = "Not yet processed";
-}*/
-
 									
-									    echo '	<tr class="" style="text-align:center;">
-												<td class="">' . $row['name'] . '</td>
-												<td class="">' . $row['uploaded_at'] . '</td>
-												<td class="">' . $processed['processed_at'] . '</td>
-												<td class=""> <input type="submit" '. $disabled .' value ="view chart" name="submit_button"</td>
-												<input type ="hidden" name = "id" value = ' . $row['id'] . '>'
-   ;  }
+ echo '	<tr class="" style="text-align:center;">
+		<td class="">' . $row['name'] . ' </td>
+		
+		<td class="">' . $row['uploaded_at'] . '</td>
+		<td class="">' . $processed['processed_at'] . '</td>
+		<td class=""><input type="submit" value ="view chart"  '. $disabled . '  </td>
+		<input type ="hidden" name = "id" value = ' . $row['id'] . '>'
+
+
+
+   ;  echo $row['id'];}
 $connection->closeConnection();										
 
 ?>	

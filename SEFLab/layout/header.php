@@ -41,11 +41,14 @@
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-user fa-fw"></i> <?php echo $email;?> <i class="fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-user"><?php
+                        <ul class="dropdown-menu dropdown-user">
+						<li><a href="../views/user_info.php"><i></i>Settings</a>
+						<?php
 						if ($_SESSION['user_group'] == 0){
 						echo'<li><a href="../views/admin/user_management.php"><i></i>Admin</a>
                             <li class="divider"></li>';
 							}?>
+							
                             <li><a href="../functions/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
