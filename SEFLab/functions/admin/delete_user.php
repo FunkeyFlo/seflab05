@@ -17,7 +17,7 @@ $t++;
 
 }
 $connection->closeConnection();
-header("location:../../views/admin/userManagement.php");
+header("location:../../views/admin/user_Management.php");
 }
 
 ?>
