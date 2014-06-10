@@ -5,9 +5,6 @@
  */
 package ssh;
 
-import ch.ethz.ssh2.Connection;
-import ch.ethz.ssh2.Session;
-import ch.ethz.ssh2.StreamGobbler;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
