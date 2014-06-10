@@ -22,7 +22,7 @@ $sql = sprintf("UPDATE $tbl_name SET `firstname`='%s',`lastname`='%s' WHERE id =
 );
 
 mysql_query($sql) or die (mysql_error());
-$connection->closeConnection;
+$connection->closeConnection();
 } else{
 $sql = sprintf("UPDATE $tbl_name SET `password`='%s',`firstname`='%s',`lastname`='%s' WHERE id = '$id' ",
 
@@ -32,7 +32,7 @@ $sql = sprintf("UPDATE $tbl_name SET `password`='%s',`firstname`='%s',`lastname`
 );
 
 mysql_query($sql) or die (mysql_error());	
-$connection->closeConnection;
+$connection->closeConnection();
 }
 
 

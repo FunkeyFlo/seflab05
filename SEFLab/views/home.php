@@ -52,7 +52,7 @@ $processed['processed_at'] = $processed['processed_at'] != "" ? $processed['proc
 		<td class="">' . $row['uploaded_at'] . '</td>
 		<td class="">' . $processed['processed_at'] . '</td>
 		<form role="form" action=\'../views/graph.php\' method=\'POST\'>
-		<td class=""><input type="submit" value ="view chart"  '. $disabled . '  </td>
+		<td class=""><input type="submit" class="btn btn-default navbar-btn" value ="view chart"  '. $disabled . '  </td>
 		<input type ="hidden" name = "id" value = ' . $row['id'] . '>
 		</form>'
 
