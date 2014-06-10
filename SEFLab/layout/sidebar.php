@@ -7,9 +7,7 @@
             <li>
                 <a href="../views/upload.php">Upload a File</a>
             </li>
-            <li>
-                <a href="../views/charts.php">My Charts</a>
-            </li>
+
 
             <!-- /#side-menu -->
     </div>

@@ -18,7 +18,7 @@ $sql1 = mysql_query("SELECT `id`, `name`,`uploaded_at` FROM `unprocessed_uploads
 $result = $sql1;
 
 ?>
-<form role="form" action='../views/graph.php' method='POST'>
+
 <div class="row">
     <div class="col-lg-12">
 	
@@ -51,12 +51,16 @@ $processed['processed_at'] = $processed['processed_at'] != "" ? $processed['proc
 		
 		<td class="">' . $row['uploaded_at'] . '</td>
 		<td class="">' . $processed['processed_at'] . '</td>
+		<form role="form" action=\'../views/graph.php\' method=\'POST\'>
 		<td class=""><input type="submit" value ="view chart"  '. $disabled . '  </td>
-		<input type ="hidden" name = "id" value = ' . $row['id'] . '>'
+		<input type ="hidden" name = "id" value = ' . $row['id'] . '>
+		</form>'
 
 
 
-   ;  echo $row['id'];}
+   ;  
+   //echo $row['id'];
+   }
 $connection->closeConnection();										
 
 ?>	
