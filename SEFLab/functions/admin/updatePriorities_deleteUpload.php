@@ -17,8 +17,8 @@ if (isset($_POST['update_button'])) {
 		$sql = sprintf("DELETE FROM  `unprocessed_uploads` WHERE  `id` =  '$id'");
 			
 			mysql_query($sql) or die (mysql_error());
-
-
+			
+			
 		
 }
 $connection->closeConnection();
