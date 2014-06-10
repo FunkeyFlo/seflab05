@@ -26,6 +26,7 @@ include '../layout/sidebar.php';
 	</head>
 	<body>
 		<div id="chart" style="width: 100%; height: 100%; "></div>
+		<a href="../<?php echo ($row['filepath_measurement']); ?>"  class="btn btn-default navbar-btn" >Download Raw Data</a>
 		
 		</body>
 		
