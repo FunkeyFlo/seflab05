@@ -15,8 +15,15 @@ $hash = mysql_real_escape_string(crypt($password));
 $count = 0;
 
 
-if($count == 1){
-}else{
+if(empty($password)){
+$sql = sprintf("UPDATE $tbl_name SET `firstname`='%s',`lastname`='%s' WHERE id = '$id' ",
+  mysql_real_escape_string($_POST['firstname']),
+  mysql_real_escape_string($_POST['lastname'])
+);
+
+mysql_query($sql) or die (mysql_error());
+$connection->closeConnection;
+} else{
 $sql = sprintf("UPDATE $tbl_name SET `password`='%s',`firstname`='%s',`lastname`='%s' WHERE id = '$id' ",
 
   mysql_real_escape_string($hash),
@@ -24,8 +31,10 @@ $sql = sprintf("UPDATE $tbl_name SET `password`='%s',`firstname`='%s',`lastname`
   mysql_real_escape_string($_POST['lastname'])
 );
 
-mysql_query($sql) or die (mysql_error());
+mysql_query($sql) or die (mysql_error());	
+$connection->closeConnection;
 }
+
 
 if($count == 1){
 }else{header("refresh:1; url = ../views/home.php");
