@@ -20,13 +20,15 @@ import org.apache.commons.net.ftp.FTPClient;
  */
 public class Transfer {
 
+    public Config cfg = new Config();
+    
     public void transfer(File file) {
         try {
             // get an ftpClient object
             FTPClient ftpClient = new FTPClient();
             FileInputStream inputStream = null;
 
-            ftpClient.connect("127.0.0.1", 1234);
+            ftpClient.connect(cfg.getVariable("transferIp"), Integer.parseInt(cfg.getVariable("transferPort")));
             ftpClient.login("flo", "flo");
             ftpClient.setBufferSize(1024000);
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);

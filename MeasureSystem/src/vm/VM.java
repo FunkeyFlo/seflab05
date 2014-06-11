@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import measuresystem.Config;
 
 /**
  *
@@ -19,10 +20,11 @@ import java.util.logging.Logger;
  *
  */
 public class VM {
-
+    
+    public Config cfg = new Config();
     private String path;
     private String name;
-    private final String vmBoxManager = "\"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" ";
+    private final String vmBoxManager = "\"" + cfg.getVariable("virtualBoxPath") + "VBoxManage.exe\" ";
 
     public VM(String path, String name) {
         this.path = path;

@@ -20,6 +20,8 @@ import org.slf4j.impl.Log4jLoggerFactory;
  */
 @SuppressWarnings("unused")
 public class FtpServerActivity implements Runnable {
+    
+    public Config cfg = new Config();
 
     public void run() {
 
@@ -29,7 +31,7 @@ public class FtpServerActivity implements Runnable {
         ListenerFactory factory = new ListenerFactory();
 
         // set the port of the listener
-        factory.setPort(1234);
+        factory.setPort(Integer.parseInt(cfg.getVariable("ftpServerPort")));
 
 		// define SSL configuration
 		/* TODO : Is not working yet. Need to work on this. 

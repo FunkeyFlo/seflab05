@@ -20,6 +20,8 @@ import java.util.ArrayList;
  */
 public class EntryScanner implements Runnable {
 
+    public Config cfg = new Config();
+    
     @Override
     public void run() {
         Query query = new Query();
@@ -37,7 +39,7 @@ public class EntryScanner implements Runnable {
                 }
 
             } else {
-                String uploadDir = "D:/seflab/seflab05/SEFLab/";
+                String uploadDir = cfg.getVariable("uploadDir");
                 Transfer tra = new Transfer();
 
                 File file = new File(uploadDir + upload.getVmPath());
@@ -53,7 +55,7 @@ public class EntryScanner implements Runnable {
                 System.out.println("transferred " + upload.getScriptPath());
 
                 try {
-                    Socket connection = new Socket("127.0.0.1", 6789);
+                    Socket connection = new Socket(cfg.getVariable("transferIp"), Integer.parseInt(cfg.getVariable("transferPort")));
 
                     ArrayList<String> parameters = new ArrayList<>();
 

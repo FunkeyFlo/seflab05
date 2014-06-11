@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import serversystem.Config;
 
 /**
  * @author Florentijn Cornet
@@ -13,6 +14,7 @@ public class Manager {
 
     public final String JDBC_EXCEPTION = "JDBC Exception: ";
     public final String SQL_EXCEPTION = "SQL Exception: ";
+    public Config cfg = new Config();
     
     public Connection connection;
 
@@ -23,10 +25,10 @@ public class Manager {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            String url = "jdbc:mysql://localhost/seflab"
+            String url = cfg.getVariable("dbURL")
                     + "?zeroDateTimeBehavior=convertToNull";
-            String user = "root";
-            String pass = "1234";
+            String user = cfg.getVariable("dbUser");
+            String pass = cfg.getVariable("dbPass");
 
             /**
              * Open connection

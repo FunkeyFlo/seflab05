@@ -17,6 +17,8 @@ import org.apache.log4j.PropertyConfigurator;
 @SuppressWarnings("unused")
 public class FtpServerActivity implements Runnable {
 
+    public Config cfg = new Config();
+    
     public void run() {
 
         PropertyConfigurator.configure("log4j.properties");
@@ -25,7 +27,7 @@ public class FtpServerActivity implements Runnable {
         ListenerFactory factory = new ListenerFactory();
 
         // set the port of the listener
-        factory.setPort(5678);
+        factory.setPort(Integer.parseInt(cfg.getVariable("ftpServerPort")));
         
         serverFactory.addListener("default", factory.createListener());
 

@@ -31,7 +31,7 @@ public class ssh {
     final int port = 2222;
 
     public ssh(String keyFile, String loadScript) {
-        this.keyFile = "C:/Users/Jay/Documents/Seflab/test_data/" + keyFile;
+        this.keyFile = "C:/SEFLab/" + keyFile;
         this.loadScript = loadScript;
     }
 
